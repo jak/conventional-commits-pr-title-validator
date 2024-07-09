@@ -57,8 +57,14 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
+          fail_when_invalid: false
 
       - name: Print Output
         id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+        run: |
+          echo "valid=${{ steps.test-action.outputs.valid }}"
+          echo "title=${{ steps.test-action.outputs.title }}"
+          echo "type=${{ steps.test-action.outputs.type }}"
+          echo "scope=${{ steps.test-action.outputs.scope }}"
+          echo "subject=${{ steps.test-action.outputs.subject }}"
+          echo "breaking_change=${{ steps.test-action.outputs.breaking_change }}"
