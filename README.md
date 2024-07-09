@@ -1,13 +1,14 @@
 # Conventional Commits in PR Title - Github Action
-> A no-frills GitHub Action to validate the Pull Request title follows 
+
+> A no-frills GitHub Action to validate the Pull Request title follows
 > [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 >
-> No need to install anything on your runner to use it.
-> Deliberately simple.
+> No need to install anything on your runner to use it. Deliberately simple.
 
 ## Usage
 
-This action validates the title of pull request automatically. This action only works on `pull_request` events.
+This action validates the title of pull request automatically. This action only
+works on `pull_request` events.
 
 To use it, add the following steps in your workflow:
 
@@ -18,8 +19,8 @@ steps:
   - uses: jak/conventional-commits-pr-title-action@v1
 ```
 
-Set the action to be a required check in your repository and voila, you can ensure
-all merges will have a valid title.
+Set the action to be a required check in your repository and voila, you can
+ensure all merges will have a valid title.
 
 ### Advanced Usage
 
@@ -30,9 +31,11 @@ output variables of the action.
 steps:
   - id: pr-title
     uses: jak/conventional-commits-pr-title-action@v1
-  - name: Only allow feat and fix type commits 
+  - name: Only allow feat and fix type commits
     run: exit 1
-    if: ${{ contains(['feat', 'fix'], fromJSON(steps.pr-title.outputs.commit).type) }}
+    if:
+      ${{ contains(['feat', 'fix'],
+      fromJSON(steps.pr-title.outputs.commit).type) }}
 ```
 
 ## Inputs
@@ -41,8 +44,8 @@ steps:
 
 **Possible values: `true` or `false`**
 
-Determines whether the Action should fail when the title could not be parsed 
-as valid Conventional Commit format.
+Determines whether the Action should fail when the title could not be parsed as
+valid Conventional Commit format.
 
 Useful if you want to compose this Action with others.
 
@@ -61,20 +64,24 @@ Re-export of the pull request title
 ### `type`
 
 The type of change, for example:
- - `feat` in `feat(parser): add ability to parse arrays`
- - `fix` in `fix(formatter): dollar symbols should not cause errors`
- 
+
+- `feat` in `feat(parser): add ability to parse arrays`
+- `fix` in `fix(formatter): dollar symbols should not cause errors`
+
 ### `scope`
 
 The scope of the change, for example:
+
 - `parser` in `feat(parser): add ability to parse arrays`
 - `formatter` in `fix(formatter): dollar symbols should not cause errors`
 
 ### `subject`
 
 The subject of the change, for example:
+
 - `add ability to parse arrays` in `feat(parser): add ability to parse arrays`
-- `dollar symbols should not cause errors` in `fix(formatter): dollar symbols should not cause errors`
+- `dollar symbols should not cause errors` in
+  `fix(formatter): dollar symbols should not cause errors`
 
 ### `breaking_change`
 
@@ -85,9 +92,10 @@ _Note: GitHub Action outputs are always strings_
 Whether the commit indicates a breaking change. This is denoted with a `!`
 appended after the type/scope.
 
-According to the [specification](https://www.conventionalcommits.org/en/v1.0.0/),
-a breaking change can also be denoted by `BREAKING CHANGE:` in the footer of the
-commit, however this Action only inspects the PR title.
+According to the
+[specification](https://www.conventionalcommits.org/en/v1.0.0/), a breaking
+change can also be denoted by `BREAKING CHANGE:` in the footer of the commit,
+however this Action only inspects the PR title.
 
 ## Contributing
 

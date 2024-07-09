@@ -1,5 +1,7 @@
 name: 'Conventional Commits in PR Titles'
-description: 'GitHub Action for validation PR titles match the Conventional Commits standard'
+description:
+  'GitHub Action for validation PR titles match the Conventional Commits
+  standard'
 author: 'Jak Spalding'
 
 branding:
@@ -14,7 +16,8 @@ inputs:
 
 outputs:
   valid:
-    description: 'true if valid, false otherwise. Useful with error_on_fail input.'
+    description:
+      'true if valid, false otherwise. Useful with error_on_fail input.'
   title:
     description: 'a re-export of the pull request title'
   type:
