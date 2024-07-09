@@ -18,7 +18,7 @@ To use it, add the following steps in your workflow:
 
 ```yaml
 steps:
-  - uses: jak/conventional-commits-pr-title-action@v1
+  - uses: jak/conventional-commits-pr-title-action@v1.0.0
 ```
 
 Set the action to be a required check in your repository and voilà, you can
@@ -32,7 +32,7 @@ output variables of the action.
 ```yaml
 steps:
   - id: pr-title
-    uses: jak/conventional-commits-pr-title-action@v1
+    uses: jak/conventional-commits-pr-title-action@v1.0.0
   - name: Only allow feat and fix type commits
     run: exit 1
     if:
