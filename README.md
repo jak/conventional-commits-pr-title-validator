@@ -1,6 +1,6 @@
-# Conventional Commits in PR Title - Github Action
+# Conventional Commits in PR Title - GitHub Action
 
-![Coverage badge][./badges/coverage.svg]
+<img src="./badges/coverage.svg" alt="coverage badge">
 
 > A no-frills GitHub Action to validate the Pull Request title follows
 > [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -21,7 +21,7 @@ steps:
   - uses: jak/conventional-commits-pr-title-action@v1
 ```
 
-Set the action to be a required check in your repository and voila, you can
+Set the action to be a required check in your repository and voilà, you can
 ensure all merges will have a valid title.
 
 ### Advanced Usage
@@ -57,7 +57,7 @@ Useful if you want to compose this Action with others.
 
 **Possible values: `"true"` or `"false"`**
 
-_Note: GitHub Action outputs are always strings_
+> Note: GitHub Action outputs are always strings
 
 ### `title`
 
@@ -89,7 +89,7 @@ The subject of the change, for example:
 
 Possible values: `"true"` or `"false"`
 
-_Note: GitHub Action outputs are always strings_
+> Note: GitHub Action outputs are always strings
 
 Whether the commit indicates a breaking change. This is denoted with a `!`
 appended after the type/scope.
