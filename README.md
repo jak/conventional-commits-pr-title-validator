@@ -1,5 +1,7 @@
 # Conventional Commits in PR Title - Github Action
 
+![Coverage badge][./badges/coverage.svg]
+
 > A no-frills GitHub Action to validate the Pull Request title follows
 > [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 >
