@@ -7,7 +7,7 @@ branding:
   color: 'purple'
 
 inputs:
-  error_on_fail:
+  fail_when_invalid:
     description: 'Should the action cause an error if the validation fails'
     required: false
     default: 'true'
@@ -15,6 +15,16 @@ inputs:
 outputs:
   valid:
     description: 'true if valid, false otherwise. Useful with error_on_fail input.'
+  title:
+    description: 'a re-export of the pull request title'
+  type:
+    description: 'the type of change parsed from the title, e.g. feat'
+  scope:
+    description: 'the scope of the change parsed from the title'
+  subject:
+    description: 'the remainder of the pull request title'
+  breaking_change:
+    description: 'true if there is a breaking change indicated in the title'
 
 runs:
   using: node20
