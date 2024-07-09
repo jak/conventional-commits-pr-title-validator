@@ -68,3 +68,8 @@ jobs:
           echo "scope=${{ steps.test-action.outputs.scope }}"
           echo "subject=${{ steps.test-action.outputs.subject }}"
           echo "breaking_change=${{ steps.test-action.outputs.breaking_change }}"
+
+      - name: Require Valid Title
+        uses: ./
+        with:
+          fail_when_invalid: true
