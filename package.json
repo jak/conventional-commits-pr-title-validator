@@ -1,6 +1,6 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
+  "name": "conventional-commits-pr-title-action",
+  "description": "GitHub Action for validation PR titles match the Conventional Commits standard",
   "version": "0.0.0",
   "author": "",
   "private": true,
@@ -66,7 +66,9 @@
     ]
   },
   "dependencies": {
-    "@actions/core": "^1.10.1"
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@conventional-commits/parser": "^0.4.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
